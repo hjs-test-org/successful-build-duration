@@ -21,4 +21,5 @@ jobs:
       - name: Print output parameter artifact ID
         uses: docker://alpine:latest
         shell: sh
-        run: echo "artifact ID for myApp:${{ cloudbees.version }} is: ${{ steps.register.outputs.artifact-id }}"
+        run: |
+          echo "artifact ID for myApp:${{ cloudbees.version }} is: ${{ steps.register.outputs.artifact-id }}"
