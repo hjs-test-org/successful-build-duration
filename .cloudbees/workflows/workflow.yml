@@ -6,21 +6,26 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  job-1:
     steps:
       - name: Checkout
         uses: cloudbees-io/checkout@v1
 
-      - name: Register an artifact with the platform
-        uses: cloudbees-io/register-build-artifacts@v1
+      - name: Register artifacts 2
         id: register
+        uses: cloudbees-io/register-build-artifacts@main
         with:
-          name: "myApp"
-          url: "docker.io/myapp/myimg:1.0.0"
-          version: "1.0.0"
-    
-      - name: Print output parameter artifact ID
+          artifact-metadata: |
+            [
+              {
+                "name": "myApp2",
+                "version": "1.0.02",
+                "url": "docker.io/myapp/myimg:1.0.02"
+              }
+            ]
+            
+      - name: Print output parameter artifact IDs
         uses: docker://alpine:latest
         shell: sh
         run: |
-          echo "artifact ID for myApp:${{ cloudbees.version }} is: ${{ steps.register.outputs.artifact-id }}"
+          echo "Artifact IDs: ${{ steps.register.outputs.artifact-ids }}"
