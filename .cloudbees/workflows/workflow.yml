@@ -4,6 +4,9 @@ name: cb-build-artifact
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - 'main'
 
 jobs:
   job-1:
