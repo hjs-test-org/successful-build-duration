@@ -13,7 +13,7 @@ jobs:
 
       - name: Register artifacts 2
         id: register
-        uses: cloudbees-io/register-build-artifacts@main
+        uses: cloudbees-io/register-build-artifacts@v1
         with:
           artifact-metadata: |
             [
