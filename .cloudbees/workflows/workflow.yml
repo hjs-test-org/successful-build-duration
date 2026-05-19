@@ -1,4 +1,5 @@
 apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
 name: My workflow
 
 on:
