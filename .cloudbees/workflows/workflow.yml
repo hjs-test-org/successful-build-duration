@@ -12,6 +12,7 @@ jobs:
         uses: cloudbees-io/checkout@v1
 
       - name: Register artifacts 2
+        kind: build
         id: register
         uses: cloudbees-io/register-build-artifacts@v1
         with:
