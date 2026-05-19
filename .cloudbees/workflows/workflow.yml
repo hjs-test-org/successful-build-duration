@@ -9,7 +9,7 @@ on:
       - 'main'
 
 jobs:
-  job-1:
+  build-artifacts:
     steps:
       - name: Checkout
         uses: cloudbees-io/checkout@v1
