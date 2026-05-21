@@ -15,7 +15,7 @@ jobs:
         uses: cloudbees-io/checkout@v1
 
       - name: Register artifacts 2
-        # kind: build
+        kind: build
         id: register
         uses: cloudbees-io/register-build-artifacts@v1
         with:
@@ -33,4 +33,4 @@ jobs:
         shell: sh
         run: |
           echo "Artifact IDs: ${{ steps.register.outputs.artifact-ids }}"
-# testing without kind
+# testing with kind
