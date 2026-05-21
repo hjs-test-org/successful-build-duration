@@ -33,3 +33,4 @@ jobs:
         shell: sh
         run: |
           echo "Artifact IDs: ${{ steps.register.outputs.artifact-ids }}"
+# testing without kind
