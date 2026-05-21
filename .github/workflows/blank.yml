@@ -1,0 +1,19 @@
+name: gha-register-build-artifacts
+on: [workflow_dispatch]
+  
+jobs:
+  register-build-artifact:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+    
+      - name: register-artifact-step
+        uses: cloudbees-io-gha/register-build-artifact@v3
+        with:
+          name: my-artifact
+          url: https://my-artifact-url.com
+          version: 1.0.0
