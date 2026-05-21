@@ -17,3 +17,4 @@ jobs:
           name: my-artifact
           url: https://my-artifact-url.com
           version: 1.0.0
+          cloudbees-url: https://api.saas-preprod.beescloud.com/
