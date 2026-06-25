@@ -1,0 +1,24 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: cb-test-build
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  test-build:
+    steps:
+      - name: Checkout
+        uses: cloudbees-io/checkout@v1
+
+      - name: Print output parameter artifact IDs
+        uses: docker://alpine:latest
+        shell: sh
+        run: |
+          echo "building.............."
+          sleep 10
+          echo "build completed !!!"
+# testing with kind
